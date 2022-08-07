@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41fca5a373986974197de0c8a339b748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0
+  playerSpeed: 5
 --- !u!114 &6757314435889262353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca34ec947be9b647acb2960a246e6b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 1
+  jumpHeight: 2
   gravityValue: -9.81
   groundCheck: {fileID: 7327586308620370544}
   groundDistance: 0.4
