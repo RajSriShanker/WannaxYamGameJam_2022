@@ -8,7 +8,11 @@ public class PlayerJump : MonoBehaviour
     private Vector3 playerVelocity;
     private bool playerIsGrounded;
     public float jumpHeight = 1f;
-    public float gravityValue = -9.8f;
+    public float gravityValue = -9.81f;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +24,11 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerIsGrounded = characterController.isGrounded;
+        playerIsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (playerIsGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y = -2f;
         }
 
         // Changes the height position of the player..
