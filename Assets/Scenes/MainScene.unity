@@ -2109,6 +2109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -4256,6 +4257,26 @@ PrefabInstance:
     - target: {fileID: 4858189025664950570, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
       propertyPath: m_Name
       value: RuneWorldSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858189025664950571, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
+      propertyPath: MaxXPosition
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858189025664950571, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
+      propertyPath: MaxZPosition
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858189025664950571, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
+      propertyPath: MinXPosition
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858189025664950571, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
+      propertyPath: MinZPosition
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4858189025664950571, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
+      propertyPath: MinDistanceBetweenRunes
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4858189025664950572, guid: 856d1be5c112e6a4abddafef4d4f24d9, type: 3}
       propertyPath: m_RootOrder
