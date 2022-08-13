@@ -24,7 +24,7 @@ public class ObstacleGeneratorController : MonoBehaviour
     private IEnumerator ObstacleTentacleSpawn()
     {
         yield return new WaitForSeconds(waitTime);
-        Instantiate(obstacle, randomSpawnPosition, Quaternion.identity);
+        Instantiate(obstacle, randomSpawnPosition, obstacle.transform.rotation);
         StartCoroutine("ObstacleTentacleSpawn");
     }
 }

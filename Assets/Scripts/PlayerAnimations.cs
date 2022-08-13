@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    private PlayerMovement playerMovementScript;
     private SpriteRenderer playerSprite;
     private float inputHorizontal;
     private float inputVertical;
@@ -19,7 +18,6 @@ public class PlayerAnimations : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerMovementScript = GetComponent<PlayerMovement>();
         playerSprite = GetComponent<SpriteRenderer>();
     }
 

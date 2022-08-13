@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d36cfcedbccf8c24d93304f255477ca9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1be1d41b88e3854eb8941af45cc2671, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,9 +168,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058fb198b46b96141a4818c12ee03664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleSprite: {fileID: 21300000, guid: d36cfcedbccf8c24d93304f255477ca9, type: 3}
+  idleSprite: {fileID: 21300000, guid: c1be1d41b88e3854eb8941af45cc2671, type: 3}
   sideSprite: {fileID: 21300000, guid: e35dbd0ab153b414497b287d3ee77e07, type: 3}
   backSprite: {fileID: 21300000, guid: fa9b35904cf70994ab52a0f78b05e8c7, type: 3}
+  afterImageParticleSystem: {fileID: 828488888456826118}
+  particleTexture:
+  - {fileID: 2100000, guid: d98abcba58757e748bf5b61ff13ac695, type: 2}
+  - {fileID: 2100000, guid: f0465e9faad2c984db587cb6bf462543, type: 2}
+  - {fileID: 2100000, guid: 0ca6dab7ae1b0484f89f45557164b6fe, type: 2}
+  - {fileID: 2100000, guid: b8332e5182ac8a44aaa79f79e40491f6, type: 2}
 --- !u!1 &1920571060971032710
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,21 +219,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player After Image Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime1
+      value: 8481
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime2
+      value: 16577
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.atime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.a
+      value: 0.09803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_NumAlphaKeys
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4873718235094071159, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4873718235094071159, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5606457
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4873718235094071159, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17434001
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4873718235094071159, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2382277
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4873718235094071159, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -259,6 +293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+--- !u!198 &828488888456826118 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4151444512178270367, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
+  m_PrefabInstance: {fileID: 3666922444409716121}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8160920966224055022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4873718235094071159, guid: f66a99f7e6e4d774f8b36066bb3de2c2, type: 3}
