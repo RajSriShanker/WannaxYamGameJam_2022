@@ -8,9 +8,13 @@ public class PlayerAnimations : MonoBehaviour
     private float inputHorizontal;
     private float inputVertical;
 
+    public float rollAntimationTime;
+
     public Sprite idleSprite;
     public Sprite sideSprite;
     public Sprite backSprite;
+    public Sprite rollSprite;
+    public Sprite hitSprite;
 
     public ParticleSystem afterImageParticleSystem;
     public Material[] particleTexture;
@@ -24,7 +28,10 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(RollAnimation());
+        }
     }
 
     private void FixedUpdate()
@@ -58,5 +65,14 @@ public class PlayerAnimations : MonoBehaviour
             afterImageParticleSystem.GetComponent<ParticleSystemRenderer>().material = particleTexture[0];
             playerSprite.sprite = backSprite;
         }
+    }
+
+
+
+    IEnumerator RollAnimation()
+    {
+        afterImageParticleSystem.GetComponent<ParticleSystemRenderer>().material = particleTexture[4];
+        playerSprite.sprite = rollSprite;
+        yield return new WaitForSeconds(rollAntimationTime);
     }
 }
