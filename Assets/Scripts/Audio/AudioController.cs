@@ -13,8 +13,9 @@ public class AudioController : MonoBehaviour
     public bool sfxMuted;
     public bool musicMuted;
 
-    public void SetMusicLevel(float value)
+    public void SetMusicLevel(System.Single value)
     {
+        value = -20f * (1 - value);
         mainMixer.SetFloat("musicVol", value);
 
         if(value == -80 && performanceSaver)
@@ -24,8 +25,9 @@ public class AudioController : MonoBehaviour
             musicMuted = false;
     }
 
-    public void SetSFXLevel(float value)
+    public void SetSFXLevel(System.Single value)
     {
+        value = -20f * (1 - value);
         mainMixer.SetFloat("sfxVol", value);
 
         if(value == -80 && performanceSaver)
