@@ -10,10 +10,12 @@ public class MusicInstrument : MonoBehaviour
 
     public InstrumentVoice[] voices;
 
-    int lastVoicePlayed;
+    public int lastVoicePlayed;
+
+    public bool isDrum;
     
     // Start is called before the first frame update
-    void Start()
+    virtual public void Start()
     {
         LoadVoices();
         LoadNotes();
@@ -29,7 +31,7 @@ public class MusicInstrument : MonoBehaviour
         }
     }
 
-    void LoadVoices()
+    public void LoadVoices()
     {
         voices = GetComponentsInChildren<InstrumentVoice>();
     }

@@ -22,6 +22,12 @@ public class InstrumentVoice : MonoBehaviour
         playing = true;
     }
 
+    public void PlaySample(DrumHit sample)
+    {
+        sources[0].PlayOneShot(sample.sample);
+    }
+
+
     public void StopNote()
     {
         sources[1].Stop();

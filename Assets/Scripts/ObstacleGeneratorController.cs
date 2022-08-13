@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ObstacleGeneratorController : MonoBehaviour
 {
     public GameObject obstacle;
     public float waitTime;
+
+    public AudioClip tentacleUp;
 
     private Vector3 randomSpawnPosition;
 
@@ -24,7 +27,8 @@ public class ObstacleGeneratorController : MonoBehaviour
     private IEnumerator ObstacleTentacleSpawn()
     {
         yield return new WaitForSeconds(waitTime);
-        Instantiate(obstacle, randomSpawnPosition, obstacle.transform.rotation);
+        GameObject newObstacle = Instantiate(obstacle, randomSpawnPosition, obstacle.transform.rotation);
+        newObstacle.GetComponent<AudioSource>().PlayOneShot(tentacleUp,.5f);
         StartCoroutine("ObstacleTentacleSpawn");
     }
 }

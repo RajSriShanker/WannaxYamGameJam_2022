@@ -1974,8 +1974,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1983,14 +1983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2064,6 +2056,14 @@ MonoBehaviour:
   target: {fileID: 1201146034}
   smoothSpeed: 0.125
   offset: {x: 0, y: 6, z: -12}
+--- !u!81 &963194230
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
 --- !u!1 &1073545011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2186,6 +2185,8 @@ MonoBehaviour:
   - start: {fileID: 8300000, guid: 9df4aff9f16ab3f478dcdd5feb3494e5, type: 3}
     loop: {fileID: 8300000, guid: 8029698583b56e545a95e22c314ee350, type: 3}
   voices: []
+  lastVoicePlayed: 0
+  isDrum: 0
 --- !u!4 &1201146034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 514443501307927630, guid: 11bef8981b991f34fad32ca22461a152, type: 3}
@@ -2676,6 +2677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 6348707742792696217, guid: bfe6e8d442b71ff489bbf72503e34264, type: 3}
   waitTime: 1
+  tentacleUp: {fileID: 8300000, guid: 1ba9bd6225ea8684489fbdbf3a785a55, type: 3}
 --- !u!1 &1610246527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,11 +3775,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2030489069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db92b5f046146014e841f0b78b34a341, type: 3}
+  m_Script: {fileID: 11500000, guid: 49dd606ad17456c4da57cada701a3c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   notes: []
   voices: []
+  lastVoicePlayed: 0
+  isDrum: 0
+  samples:
+  - start: {fileID: 0}
+    loop: {fileID: 0}
+    sample: {fileID: 8300000, guid: bd136bec5339ae44d87ff7564a85c160, type: 3}
+  - start: {fileID: 0}
+    loop: {fileID: 0}
+    sample: {fileID: 8300000, guid: 6ed51b250b2e4ba4d92354bb6a0b7dfd, type: 3}
+  - start: {fileID: 0}
+    loop: {fileID: 0}
+    sample: {fileID: 8300000, guid: 3d4d8b5fe7c92a442a8f6225c96687ea, type: 3}
+  - start: {fileID: 0}
+    loop: {fileID: 0}
+    sample: {fileID: 8300000, guid: 88b04b3d2a9f99b44bca1c42bab91b97, type: 3}
 --- !u!1 &2075133140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3826,8 +3843,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db92b5f046146014e841f0b78b34a341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notes: []
+  notes:
+  - start: {fileID: 8300000, guid: ccbbe4d48a90bfc4d9169e5c0f681293, type: 3}
+    loop: {fileID: 8300000, guid: ad79440507073324ca883ed5fde40899, type: 3}
+  - start: {fileID: 8300000, guid: 21c88ec8522f63347a81abd664554d6b, type: 3}
+    loop: {fileID: 8300000, guid: 3ed992c1ee39f934bbffe12ccea53344, type: 3}
+  - start: {fileID: 8300000, guid: 0d97d26838c914642a389496faa1b10c, type: 3}
+    loop: {fileID: 8300000, guid: 5f291b87c1786574aa6b3185f53fdf9b, type: 3}
+  - start: {fileID: 8300000, guid: ae8239a60cee49f43aeffa6c4851ed39, type: 3}
+    loop: {fileID: 8300000, guid: 35228a80cc876be4d88284bcaa72907f, type: 3}
+  - start: {fileID: 8300000, guid: 0b5a0402bb480614e8d4448953142f0d, type: 3}
+    loop: {fileID: 8300000, guid: 2b1f112cdfb15474c8b7cb74d9f91a05, type: 3}
+  - start: {fileID: 8300000, guid: de5694e9e13d94d4388fce867cdb4e47, type: 3}
+    loop: {fileID: 8300000, guid: 1807afdf3ba3fd1418b246f0f9394019, type: 3}
+  - start: {fileID: 8300000, guid: e6770941e88f083498f96b25e7aa5e52, type: 3}
+    loop: {fileID: 8300000, guid: 14f563ad8750fa446bea9643d81450e9, type: 3}
   voices: []
+  lastVoicePlayed: 0
+  isDrum: 0
 --- !u!1 &2096100705
 GameObject:
   m_ObjectHideFlags: 0
