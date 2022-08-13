@@ -4,6 +4,16 @@ using UnityEngine;
 public class PlayerPickup : MonoBehaviour
 {
     private Rune _selectedRune = null;
+
+    public Rune GetSelectedRune()
+    {
+        return _selectedRune;
+    }
+
+    public void ClearSelectedRune()
+    {
+        _selectedRune = null;
+    }
     
     private void OnPickup(Rune rune)
     {
