@@ -11,7 +11,13 @@ public class RuneWorldSpawnerController : MonoBehaviour
     [SerializeField] private float spawnIntervalTime = 2f;
     [SerializeField] private float RuneLifetime = 6f;
     [SerializeField] private int TotalRuneCapacity = 8;
-    [SerializeField] private float MinimumDistanceBetweenRunes = 2f;
+
+    [Header("Spawn Position Parameters")] 
+    [SerializeField] private float MinXPosition = -9f;
+    [SerializeField] private float MaxXPosition = 9;
+    [SerializeField] private float MinZPosition = -4f;
+    [SerializeField] private float MaxZPosition = 4;
+    [SerializeField] private float MinDistanceBetweenRunes = 2f;
 
     private float _spawnTimer = 0f;
 
@@ -50,11 +56,11 @@ public class RuneWorldSpawnerController : MonoBehaviour
         // Generate a spawn position that is not too close to another spawned Rune
         do
         {
-            spawnPosition = new Vector3(Random.Range(-9, 9), RunePrefab.transform.position.y, Random.Range(-4, 4));
+            spawnPosition = new Vector3(Random.Range(MinXPosition, MaxXPosition), RunePrefab.transform.position.y, Random.Range(MinZPosition, MaxZPosition));
             isSpawnPositionValid = true;
             foreach (var rune in _spawnedRunesList)
             {
-                if (Vector3.Distance(spawnPosition, rune.Item1.position) < MinimumDistanceBetweenRunes)
+                if (Vector3.Distance(spawnPosition, rune.Item1.position) < MinDistanceBetweenRunes)
                 {
                     isSpawnPositionValid = false;
                     break;
