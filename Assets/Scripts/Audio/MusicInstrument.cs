@@ -41,6 +41,7 @@ public class MusicInstrument : MonoBehaviour
             if(!voices[i].playing)
             {
                 voices[i].PlayNote(noteDict[note]);
+                lastVoicePlayed = i;
                 break;
             }
         }
