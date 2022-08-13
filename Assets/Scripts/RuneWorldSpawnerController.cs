@@ -44,6 +44,11 @@ public class RuneWorldSpawnerController : MonoBehaviour
         // Increment the lifetime timer of each spawned Rune in the scene
         for (int i = 0; i < _spawnedRunesList.Count; i++)
         {
+            if (_spawnedRunesList[i].Item1 == null)
+            {
+                _spawnedRunesList.RemoveAt(i);
+                continue;
+            }
             _spawnedRunesList[i] = new Tuple<Transform, float>(_spawnedRunesList[i].Item1, _spawnedRunesList[i].Item2 + Time.deltaTime);
         }
     }

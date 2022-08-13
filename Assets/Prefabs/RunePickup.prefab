@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7282957941093319899}
   - component: {fileID: 7282957941093319900}
   - component: {fileID: 7282957941093319901}
+  - component: {fileID: 7557077154247276017}
   m_Layer: 0
   m_Name: RunePickup
   m_TagString: Pickup
@@ -104,3 +105,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7bcac3e98a510fc49a0c6d9301847dee, type: 2}
   - {fileID: 11400000, guid: 65a98af0d441f9949be8830069febca0, type: 2}
   - {fileID: 11400000, guid: 8d74578872cdee546a42c761e3b6c872, type: 2}
+--- !u!135 &7557077154247276017
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282957941093319902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.6
+  m_Center: {x: 0, y: 0, z: 0}

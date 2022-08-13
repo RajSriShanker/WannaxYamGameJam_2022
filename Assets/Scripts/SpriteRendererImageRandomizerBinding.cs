@@ -5,7 +5,8 @@ public class SpriteRendererImageRandomizerBinding : MonoBehaviour
 {
     [SerializeField] private Rune[] RunesList;
 
-    private SpriteRenderer _spriteRenderer; 
+    private Rune _rune;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
@@ -15,8 +16,13 @@ public class SpriteRendererImageRandomizerBinding : MonoBehaviour
     private void OnEnable()
     {
         // Randomize Rune
-        Rune rune = RunesList[Random.Range(0, RunesList.Length - 1)];
+        _rune = RunesList[Random.Range(0, RunesList.Length - 1)];
 
-        _spriteRenderer.sprite = rune.Sprite;
+        _spriteRenderer.sprite = _rune.Sprite;
+    }
+
+    public Rune GetRune()
+    {
+        return _rune;
     }
 }
