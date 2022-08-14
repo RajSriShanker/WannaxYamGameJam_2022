@@ -4,6 +4,16 @@ public class PlayerPickup : MonoBehaviour
 {
     private Rune _selectedRune = null;
 
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
+
+    public PlayerRuneSelection playerRuneSelectionScript;
+
+    private void Start()
+    {
+        playerRuneSelectionScript = GetComponent<PlayerRuneSelection>();
+    }
+
     public Rune GetSelectedRune()
     {
         return _selectedRune;
@@ -17,7 +27,9 @@ public class PlayerPickup : MonoBehaviour
     private void OnPickup(Rune rune)
     {
         _selectedRune = rune;
-        print($"New rune selected with id {rune.Id}");
+        _spriteRenderer.sprite = _selectedRune.Sprite;
+        playerRuneSelectionScript.playerRune = _selectedRune.Id;
+        //print($"New rune selected with id {rune.Id}");
     }
     
     private void OnTriggerEnter(Collider other)
