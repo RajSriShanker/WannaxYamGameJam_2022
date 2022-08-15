@@ -22,6 +22,12 @@ public class InstrumentVoice : MonoBehaviour
         playing = true;
     }
 
+    public void PlayNote(Note note, bool pedalTone)
+    {
+        StartCoroutine(NewPedalTone(note.start, note.loop));
+        playing = true;
+    }
+
     public void PlaySample(DrumHit sample)
     {
         sources[0].PlayOneShot(sample.sample);
