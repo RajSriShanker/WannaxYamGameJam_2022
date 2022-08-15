@@ -9,13 +9,14 @@ public class ConveyorRuneGenerator : MonoBehaviour
     private Rune _selectedRune = null;
 
     public PlayerRuneSelection playerRuneSelectionScript;
+    public GameController gameControllerScript;
 
     public TempoController tempoController;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerRuneSelectionScript = GetComponent<PlayerRuneSelection>();
+
     }
 
     // Update is called once per frame
@@ -49,11 +50,15 @@ public class ConveyorRuneGenerator : MonoBehaviour
     {
         _selectedRune = rune;
         playerRuneSelectionScript.conveyorRune = _selectedRune.Id;
+        gameControllerScript.RuneMatch();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Rune rune = other.GetComponent<SpriteRendererImageRandomizerBinding>().GetRune();
-        SelectionRune(rune);
+        if (other.CompareTag("CRune"))
+        {
+            Rune rune = other.GetComponent<SpriteRendererImageRandomizerBinding>().GetRune();
+            SelectionRune(rune);
+        }
     }
 }
