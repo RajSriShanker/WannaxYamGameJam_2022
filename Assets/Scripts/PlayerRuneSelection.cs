@@ -18,6 +18,11 @@ public class PlayerRuneSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log($"Player Rune is {playerRune} and Conveyor Rune is {conveyorRune}");
+
+    }
+
+    public void DebugText()
+    {
+        Debug.Log($"Player Rune is {playerRune} and Conveyor Rune is {conveyorRune}");
     }
 }

@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 1497679131932661360}
   - component: {fileID: 8537568510253659868}
   - component: {fileID: 4981278406141534139}
+  - component: {fileID: 5001460910193555676}
   m_Layer: 0
   m_Name: Tentacle_Long
-  m_TagString: Untagged
+  m_TagString: Tentacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8980497b7e4247046ac98f9949509672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endPosition: {x: 0, y: 0, z: 0}
   desiredDuration: 2
   deathTime: 3
 --- !u!82 &4981278406141534139
@@ -230,6 +232,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5001460910193555676
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2270662557841542346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2788108682239869670
 GameObject:
   m_ObjectHideFlags: 0

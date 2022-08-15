@@ -36,6 +36,7 @@ public class PlayerPickup : MonoBehaviour
     {
         if (other.CompareTag("Pickup"))
         {
+            ClearSelectedRune();
             Rune rune = other.GetComponent<SpriteRendererImageRandomizerBinding>().GetRune();
             Destroy(other.gameObject);
             OnPickup(rune);

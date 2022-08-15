@@ -51,12 +51,14 @@ public class ConveyorRuneGenerator : MonoBehaviour
         _selectedRune = rune;
         playerRuneSelectionScript.conveyorRune = _selectedRune.Id;
         gameControllerScript.RuneMatch();
+        playerRuneSelectionScript.DebugText();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CRune"))
         {
+            ClearSelectedRune();
             Rune rune = other.GetComponent<SpriteRendererImageRandomizerBinding>().GetRune();
             SelectionRune(rune);
         }

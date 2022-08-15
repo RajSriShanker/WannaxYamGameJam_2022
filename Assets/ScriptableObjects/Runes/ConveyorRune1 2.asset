@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ConveyorRune1 2
   m_EditorClassIdentifier: 
   Id: 2
-  Sprite: {fileID: 21300000, guid: cbb786098b77c17478d975d88c0a2a1c, type: 3}
+  Sprite: {fileID: 21300000, guid: 614bf71960c59824fba936f49fbc313c, type: 3}

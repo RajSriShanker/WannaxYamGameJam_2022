@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    private SpriteRenderer playerSprite;
+    [HideInInspector]
+    public SpriteRenderer playerSprite;
+
     private float inputHorizontal;
     private float inputVertical;
 
@@ -28,10 +30,7 @@ public class PlayerAnimations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(RollAnimation());
-        }
+
     }
 
     private void FixedUpdate()
@@ -65,6 +64,11 @@ public class PlayerAnimations : MonoBehaviour
             afterImageParticleSystem.GetComponent<ParticleSystemRenderer>().material = particleTexture[0];
             playerSprite.sprite = backSprite;
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(RollAnimation());
+        }
     }
 
 
@@ -73,6 +77,6 @@ public class PlayerAnimations : MonoBehaviour
     {
         afterImageParticleSystem.GetComponent<ParticleSystemRenderer>().material = particleTexture[4];
         playerSprite.sprite = rollSprite;
-        yield return new WaitForSeconds(rollAntimationTime);
+        yield return new WaitForSeconds(rollAntimationTime * Time.deltaTime);
     }
 }

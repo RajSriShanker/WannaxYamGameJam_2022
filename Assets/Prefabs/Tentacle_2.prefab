@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3024575366672476793}
   - component: {fileID: -2871128905097289079}
   - component: {fileID: -8794007164403974282}
+  - component: {fileID: -2518253616507642758}
   m_Layer: 0
   m_Name: Tentacle_2
-  m_TagString: Untagged
+  m_TagString: Tentacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3673124430240238508}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -6.34, y: -2.74, z: -19.3}
+  m_LocalPosition: {x: -6.34, y: -6, z: -19.3}
   m_LocalScale: {x: 576.5992, y: 576.5992, z: 576.5992}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -97,8 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8980497b7e4247046ac98f9949509672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredDuration: 2
-  deathTime: 3
+  endPosition: {x: 0, y: -3, z: 0}
+  desiredDuration: 10
+  deathTime: 7
 --- !u!82 &-8794007164403974282
 AudioSource:
   m_ObjectHideFlags: 0
@@ -195,3 +197,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &-2518253616507642758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3673124430240238508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.002009013, y: 0.0035212652, z: 0.004999367}
+  m_Center: {x: 0.00017447869, y: -0.00051269494, z: 0.0023372096}

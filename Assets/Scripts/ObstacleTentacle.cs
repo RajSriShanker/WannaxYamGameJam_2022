@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObstacleTentacle : MonoBehaviour
 {
     private Vector3 startingPosition;
+    [SerializeField]
+    private Vector3 endPosition;
     public float desiredDuration = 2f;
     private float elapsedTime;
     public float deathTime = 3f;
@@ -19,9 +21,9 @@ public class ObstacleTentacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //elapsedTime += Time.deltaTime;
+        elapsedTime += Time.deltaTime;
         //float percentageComplete = elapsedTime / desiredDuration;
 
-        //transform.position = Vector3.Lerp(startingPosition, new Vector3(startingPosition.x, -2f,startingPosition.z), Mathf.PingPong(elapsedTime, desiredDuration));
+        transform.position = Vector3.Lerp(startingPosition, new Vector3(startingPosition.x, endPosition.y,startingPosition.z), Mathf.PingPong(elapsedTime, desiredDuration));
     }
 }

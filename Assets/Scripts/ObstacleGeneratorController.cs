@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.Audio;
+using System.Xml.Linq;
 
 public class ObstacleGeneratorController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class ObstacleGeneratorController : MonoBehaviour
     [SerializeField] private float MinZPosition = -4f;
     [SerializeField] private float MaxZPosition = 4;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class ObstacleGeneratorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        randomSpawnPosition = new Vector3(Random.Range(MinXPosition, MaxXPosition), -2.41f, Random.Range(MinZPosition,MaxZPosition));
+        randomSpawnPosition = new Vector3(Random.Range(MinXPosition, MaxXPosition), -6, Random.Range(MinZPosition,MaxZPosition));
     }
 
     private IEnumerator ObstacleTentacleSpawn()
@@ -37,7 +39,6 @@ public class ObstacleGeneratorController : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         int randomNumber = Random.Range(0, obstacles.Length - 1);
         GameObject newObstacle = Instantiate(obstacles[randomNumber], randomSpawnPosition, obstacles[randomNumber].transform.rotation);
-
         newObstacle.GetComponent<AudioSource>().PlayOneShot(tentacleUp,.5f);
         StartCoroutine(ObstacleTentacleSpawn());
     }

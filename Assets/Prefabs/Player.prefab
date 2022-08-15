@@ -95,10 +95,12 @@ GameObject:
   - component: {fileID: 514443501307927630}
   - component: {fileID: 514443501307927625}
   - component: {fileID: 1056146974140268918}
+  - component: {fileID: 3882672099451750454}
   - component: {fileID: 6805685935686302904}
   - component: {fileID: 5052879412374782245}
   - component: {fileID: 2087687908}
   - component: {fileID: 1955200083852776552}
+  - component: {fileID: 2132949206}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -194,6 +196,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: -0.25, z: 0}
+--- !u!114 &3882672099451750454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514443501307927624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 274380d22112c084b93c37504b4c3e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimationsScript: {fileID: 2087687908}
+  hitSoundEffect: {fileID: 8300000, guid: 5fd08547c180366438d301d011e309d3, type: 3}
 --- !u!114 &6805685935686302904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058fb198b46b96141a4818c12ee03664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollAntimationTime: 0.25
+  playerSprite: {fileID: 0}
+  rollAntimationTime: 0.5
   idleSprite: {fileID: 21300000, guid: c1be1d41b88e3854eb8941af45cc2671, type: 3}
   sideSprite: {fileID: 21300000, guid: e35dbd0ab153b414497b287d3ee77e07, type: 3}
   backSprite: {fileID: 21300000, guid: fa9b35904cf70994ab52a0f78b05e8c7, type: 3}
@@ -261,6 +278,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 1876041426}
+  playerRuneSelectionScript: {fileID: 0}
+--- !u!114 &2132949206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514443501307927624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8e0c49df640994787b59f9849ba104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRune: 0
+  conveyorRune: 0
 --- !u!1 &1920571060971032710
 GameObject:
   m_ObjectHideFlags: 0
