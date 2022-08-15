@@ -46,6 +46,6 @@ public class CthulhuManager : MonoBehaviour
 
     public void EvilWins()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position, percentageComplete);
+
     }
 }

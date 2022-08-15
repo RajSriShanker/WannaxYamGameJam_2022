@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     public PlayerRuneSelection playerRuneSelectionScript;
     public CthulhuManager chulhuManagerScript;
-    public ColourChange[] colourChangeScript;
+    public SmokeSystem[] smokeParticleSystems;
 
     public GameObject winImage;
     public GameObject loseImage;
@@ -51,9 +51,9 @@ public class GameController : MonoBehaviour
     {
         if (playerRuneSelectionScript.conveyorRune == playerRuneSelectionScript.playerRune)
         {
+            smokeParticleSystems[0].StartColourChange();
+            smokeParticleSystems[1].StartColourChange();
             Debug.Log("1 Point");
-            colourChangeScript[0].StartChange();
-            colourChangeScript[1].StartChange();
             pointsCounter++;
             audioSource.PlayOneShot(runeMatch);
         }
