@@ -35,7 +35,8 @@ public class ObstacleGeneratorController : MonoBehaviour
     private IEnumerator ObstacleTentacleSpawn()
     {
         yield return new WaitForSeconds(waitTime);
-        Instantiate(obstacles[Random.Range(0,obstacles.Length - 1)], randomSpawnPosition, Quaternion.identity);
+        int randomNumber = Random.Range(0, obstacles.Length - 1);
+        Instantiate(obstacles[randomNumber], randomSpawnPosition, obstacles[randomNumber].transform.rotation);
 
         //newObstacle.GetComponent<AudioSource>().PlayOneShot(tentacleUp,.5f);
         StartCoroutine(ObstacleTentacleSpawn());

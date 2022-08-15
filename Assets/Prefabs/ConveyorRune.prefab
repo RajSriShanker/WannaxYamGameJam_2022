@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 0}
-  desiredDuration: 5
+  desiredDuration: 12
   curve:
     serializedVersion: 2
     m_Curve:

@@ -9,6 +9,7 @@ public class ConveyorRuneGenerator : MonoBehaviour
     private Rune _selectedRune = null;
 
     public PlayerRuneSelection playerRuneSelectionScript;
+    public GameController gameControllerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class ConveyorRuneGenerator : MonoBehaviour
     {
         _selectedRune = rune;
         playerRuneSelectionScript.conveyorRune = _selectedRune.Id;
+        gameControllerScript.RuneMatch();
     }
 
     private void OnTriggerEnter(Collider other)
