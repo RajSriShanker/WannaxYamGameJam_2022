@@ -13,7 +13,7 @@ public class ConveyorRuneGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRuneSelectionScript = GetComponent<PlayerRuneSelection>();
+
     }
 
     // Update is called once per frame
@@ -50,7 +50,10 @@ public class ConveyorRuneGenerator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Rune rune = other.GetComponent<SpriteRendererImageRandomizerBinding>().GetRune();
-        SelectionRune(rune);
+        if (other.CompareTag("CRune"))
+        {
+            Rune rune = other.GetComponent<SpriteRendererImageRandomizerBinding>().GetRune();
+            SelectionRune(rune);
+        }
     }
 }
