@@ -10,6 +10,8 @@ public class ConveyorRuneGenerator : MonoBehaviour
 
     public PlayerRuneSelection playerRuneSelectionScript;
 
+    public TempoController tempoController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class ConveyorRuneGenerator : MonoBehaviour
     {
         GameObject conveyorRuneClone = Instantiate(conveyorRune, conveyorRune.transform.position, conveyorRune.transform.rotation);
         conveyorRuneClone.transform.parent = gameObject.transform;
+        tempoController.BellToll();
         yield return new WaitForSeconds(waitTime);
     }
 

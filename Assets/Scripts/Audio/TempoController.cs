@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class TempoController : MonoBehaviour
 {
@@ -10,16 +11,23 @@ public class TempoController : MonoBehaviour
     public static int beatNumber;
     public float beatCount;
 
-    public static int currentSubdivision;
+    public int currentSubdivision;
 
     Coroutine subCount;
 
-    // Update is called once per frame
-    void Update()
+    AudioSource audioSource;
+    public AudioClip bellClip;
+
+    public int ringCount;
+
+    MusicController musicController;
+
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-            BellToll();
+        audioSource = GetComponent<AudioSource>();
+        musicController = GetComponentInChildren<MusicController>();
     }
+
 
     public static void ChangeTempo()
     {
@@ -31,18 +39,26 @@ public class TempoController : MonoBehaviour
 
     public void BellToll()
     {
-        currentSubdivision = 1;
         beatNumber++;
-        Debug.Log("Ding!");
+        ringCount++;
+
+        audioSource.PlayOneShot(bellClip);
 
         ProcessBeat();
-        Debug.Log("Beat Number = " + beatNumber);
         
         if(subCount != null)
             StopCoroutine(subCount);
-        subCount = StartCoroutine(SubdivideBeat());
+
+        if(beatCount != 0)
+            subCount = StartCoroutine(SubdivideBeat());
         
-        StartCoroutine(CountBeats());
+        if(beatCount == 0)
+            StartCoroutine(CountBeats());
+
+        if(ringCount % 4 == 0 && musicController.currentMeasure != musicController.gameMusic.Count - 1)
+        {
+            musicController.currentMeasure++;
+        }
     }
 
     void ProcessBeat()
@@ -72,6 +88,8 @@ public class TempoController : MonoBehaviour
     {
         float elapsedTime = 0;
         currentSubdivision = 1;
+        musicController.StepMusic(currentSubdivision);
+
         while (elapsedTime < beatCount)
         {
             elapsedTime += Time.deltaTime;
@@ -81,6 +99,7 @@ public class TempoController : MonoBehaviour
                 if (newBeat == 5)
                     newBeat = 4;
                 currentSubdivision = newBeat;
+                musicController.StepMusic(currentSubdivision);
             }
             yield return null;
         }

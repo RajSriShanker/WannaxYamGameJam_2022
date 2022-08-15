@@ -36,7 +36,7 @@ public class MusicInstrument : MonoBehaviour
         voices = GetComponentsInChildren<InstrumentVoice>();
     }
 
-    void PlayNote(string note)
+    public void PlayNote(string note)
     {
         for(int i = 0; i < voices.Length; i++)
         {
@@ -53,6 +53,14 @@ public class MusicInstrument : MonoBehaviour
         else
             voices[lastVoicePlayed - 1].PlayNote(noteDict[note]);
 
+    }
+
+    public void StopNotes()
+    {
+        foreach(InstrumentVoice voice in voices)
+        {
+            voice.StopNote();
+        }
     }
 }
 

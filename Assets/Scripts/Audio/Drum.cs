@@ -7,7 +7,7 @@ public class Drum : MusicInstrument
 {
     public DrumHit[] samples;
 
-    Dictionary<string, DrumHit> sampleDict = new Dictionary<string, DrumHit>();
+    Dictionary<int, DrumHit> sampleDict = new Dictionary<int, DrumHit>();
 
     // Start is called before the first frame update
     override public void Start()
@@ -24,16 +24,17 @@ public class Drum : MusicInstrument
 
     void LoadSamples()
     {
-        foreach(DrumHit sample in samples)
+        for(int i = 0; i < samples.Length; i++)
         {
-            string name = sample.sample.name[0].ToString();
-            Debug.Log(name);
-            sampleDict.Add(name, sample);
+            sampleDict.Add(i, samples[i]);
         }
     }
 
-    void PlaySample(string sample)
+    public void PlaySample(int sample)
     {
+        voices[0].PlaySample(sampleDict[sample]);
+
+        /*
         for(int i = 0; i < voices.Length; i++)
         {
             if(!voices[i].playing)
@@ -48,6 +49,8 @@ public class Drum : MusicInstrument
             voices[voices.Length - 1].PlayNote(sampleDict[sample]);
         else
             voices[lastVoicePlayed - 1].PlayNote(sampleDict[sample]);
+
+            */
 
     }
 
